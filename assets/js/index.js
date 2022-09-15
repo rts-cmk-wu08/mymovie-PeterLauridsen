@@ -18,8 +18,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=f6cd4ea3a6cc09f282
             `
             section.append(div)
 
-
     })
 
-
+    
 })

@@ -1,0 +1,17 @@
+*{
+    margin: 0 auto;
+}
+.cards{
+    width: 15rem;
+    height: 20rem;
+    background-size: cover;
+    display: flex;   
+    margin: 2rem;
+
+}
+
+.sliding{
+    display: flex;
+    overflow-x: scroll;
+    
+}
