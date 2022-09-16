@@ -1,17 +1,39 @@
 *{
-    margin: 0 auto;
-}
-.cards{
-    width: 15rem;
-    height: 20rem;
-    background-size: cover;
-    display: flex;   
-    margin: 2rem;
-
-}
-
-.sliding{
-    display: flex;
-    overflow-x: scroll;
+    box-sizing: border-box;
+    border-radius: 1rem;
     
+}
+
+.popular__header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+text-decoration: none;
+}
+
+.movie-article{
+     display: flex;   
+    margin: 1rem;
+}
+
+.genre__pill{
+    display: flex;   
+    background-color:  #DBE3FF;
+    border-radius: 100px;
+    width: 9rem;
+    justify-content: center;
+    color: #88A4E8;
+    text-transform: uppercase;
+    
+}
+
+.genres{
+    display: flex;
+    gap: 1rem;
+   }
+
+.movie-article-div{
+    display: flex;
+    flex-direction: column;
+    margin: 7rem;
 }

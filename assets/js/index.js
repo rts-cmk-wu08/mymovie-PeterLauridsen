@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mainElm.append(popularElm)
 
     let popularHeader = document.createElement("header")
+    popularHeader.classList.add("popular__header")
     popularHeader.innerHTML = `
     <h2>Popular</h2>
     <a href="#">Show more</a>
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 article.classList.add("movie-article")
                 article.innerHTML = `
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster">
-                    <div>
+                    <div class="movie-article-div">
                         <h3>${movie.title}</h3>
                         <p>${movie.vote_average}/10 IMDB</p>
                         <p class="genres"></p>
