@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let baseurl = "https://api.themoviedb.org/3"
+    let baseUrl = "https://api.themoviedb.org/3"
     let apiKey = "f6cd4ea3a6cc09f282a877cc9c2daed4"
+
 
     // Her tager vi fat i wrapper som vi har lavet ude i html
     let wrapperElm = document.querySelector(".wrapper")
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Her skriver det tekst som skal være i headeren
     headerElm.innerHTML = `
-        <h1>MyMovies</h1>
+        <h1 class="myMovies">MyMovies</h1>
         <button>Switch</button>
     `
 
@@ -40,8 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let popularMovies = document.createElement("div")
     popularElm.append(popularMovies)
 
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
+    .then(slideMovies => slideMovies.json())
+    .then(movies => {
+        console.log(movies)
+
+        
+    })
     // Her tager vi fat i vores ønskede url
-    fetch(`${baseurl}/movie/popular?api_key=${apiKey}`)
+    fetch(`${baseUrl}/movie/popular?api_key=${apiKey}`)
+    
 
 
         // Her køre vi json metoden for at hente data fra reponse objeketet
@@ -75,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
         })
+
+
 
 
 
