@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let mainElm = document.createElement("main")
     wrapperElm.append(mainElm)
 
+    // Her laver vi vores slider objekt
+    let showingElm = document.createElement("section")
+    mainElm.append(showingElm)
+
     // Her laver vi en footer
     let footerElm = document.createElement("footer")
     wrapperElm.append(footerElm)
@@ -24,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <h1 class="myMovies">MyMovies</h1>
         <button>Switch</button>
     `
-
     let popularElm = document.createElement("section")
     popularElm.classList.add("popular")
     mainElm.append(popularElm)
@@ -37,21 +40,39 @@ document.addEventListener("DOMContentLoaded", () => {
     `
     popularElm.append(popularHeader)
 
-
     let popularMovies = document.createElement("div")
     popularElm.append(popularMovies)
 
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`)
-    .then(slideMovies => slideMovies.json())
-    .then(movies => {
-        console.log(movies)
+    fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=f6cd4ea3a6cc09f282a877cc9c2daed4&language=en-US&page=1')
+        .then(nowPlaying => nowPlaying.json())
+        .then(nowPlay => {
+            console.log(nowPlay)
 
-        
-    })
+            let sliderDiv = document.createElement("div")
+
+            sliderDiv.classList.add("sliding")
+
+            nowPlay.results.forEach(nowPlaying => {
+                let div = document.createElement("div")
+                div.classList.add("cards")
+                div.innerHTML = `
+                <img src="https://image.tmdb.org/t/p/original${nowPlaying.backdrop_path}" alt="">
+                        <div class="nowPlayText">
+                        <h3>${nowPlay.title}</h3>
+                        <p>${nowPlay.vote_average}/10 IMDB</p>
+                        <p class="genres"></p>
+                        </div>
+                
+                    `
+                sliderDiv.append(div)
+            })
+            showingElm.append(sliderDiv)
+        })
+
+
+
     // Her tager vi fat i vores ønskede url
     fetch(`${baseUrl}/movie/popular?api_key=${apiKey}`)
-    
-
 
         // Her køre vi json metoden for at hente data fra reponse objeketet
         // og konvetere json objeketet til javascript.
@@ -84,9 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
         })
-
-
-
-
-
 })

@@ -19,32 +19,49 @@
     text-decoration: none;
 }
 
+.popular__header a {
+    border: 3px solid #AAA9B1;
+    text-decoration: none;
+    border-radius: 50px;
+    color: #AAA9B1;
+    font-size: small;
+    padding: 0.4rem;
+}
+
+.popular__header h2 {
+    color: rgb(17, 14, 71);
+}
+
 .movie-article {
     display: flex;
     align-items: center;
     width: 100%;
     overflow: hidden;
-    
+
 }
+
 .movie-article img {
     border-radius: 0.5rem;
     width: 8rem;
     margin: 0.2rem;
 }
 
+.movie-article-div h2 {
+    color: #110E47;
+
+}
+
 .genre__pill {
     display: flex;
     background-color: #DBE3FF;
-    border-radius:  1rem;
+    border-radius: 1rem;
     width: 6rem;
+    height: 1rem;
     justify-content: center;
     color: #88A4E8;
     text-transform: uppercase;
     font-size: x-small;
-    
-    
-
-
+    align-items: center;
 }
 
 .genres {
@@ -57,6 +74,35 @@
     flex-direction: column;
     margin: 1rem;
     width: 100%;
-    
-    
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    height: 8rem;
+
+
+
+}
+
+.cards img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 0.5rem;
+
+
+}
+
+.sliding {
+    overflow-x: scroll;
+    display: flex;
+    height: 15rem;
+    gap: 1rem;
+
+}
+
+.nowPlayText {
+    display: flex;
+    flex-wrap: wrap;
+
 }
