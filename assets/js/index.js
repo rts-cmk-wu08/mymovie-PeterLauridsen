@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=f6cd4ea3a6cc09f282a877cc9c2daed4&language=en-US&page=1')
         .then(nowPlaying => nowPlaying.json())
         .then(nowPlay => {
-            console.log(nowPlay)
+            console.log(nowPlay.results)
 
             let sliderDiv = document.createElement("div")
 
@@ -56,18 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 let div = document.createElement("div")
                 div.classList.add("cards")
                 div.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/original${nowPlaying.backdrop_path}" alt="">
-                        <div class="nowPlayText">
-                        <h3>${nowPlay.title}</h3>
-                        <p>${nowPlay.vote_average}/10 IMDB</p>
-                        <p class="genres"></p>
-                        </div>
-                
-                    `
+                <img src="https://image.tmdb.org/t/p/original${nowPlaying.poster_path}" alt="">
+                    <div class="nowPlayingTxt">
+                        <h3>${nowPlaying.title}</h3>
+                        <p>${nowPlaying.vote_average}/10 IMDB</p>
+                    </div>
+                `
                 sliderDiv.append(div)
-            })
-            showingElm.append(sliderDiv)
         })
+            showingElm.append(sliderDiv)
+    })
 
 
 
