@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let article = document.createElement("article")
                 article.classList.add("movie-article")
                 article.innerHTML = `
-                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster">
+                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" onclick="window.location.href='details.html?id=${movie.id}';" alt="${movie.title} poster">
                     <div class="movie-article-div">
                         <h3>${movie.title}</h3>
                         <p> <span class="fa-solid fa-star"></span> ${movie.vote_average}/10 IMDB</p>
