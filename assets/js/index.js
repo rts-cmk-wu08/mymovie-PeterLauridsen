@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let footerElm = document.createElement("footer")
     wrapperElm.append(footerElm)
 
+    footerElm.innerHTML=`
+    <span class="footerIcons">
+    <span class="fa-solid fa-video footerIcons__size"></span>
+    <span class="fa-solid fa-ticket-simple footerIcons__size__90deg"></span>
+    <span class="fa-solid fa-bookmark footerIcons__size"></span>
+    </span>
+    `
+
     // Her skriver det tekst som skal være i headeren
     headerElm.innerHTML = `
         <h1 class="myMovies">MyMovies</h1>
@@ -49,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(nowPlay.results)
 
             let sliderDiv = document.createElement("div")
-
             sliderDiv.classList.add("sliding")
 
             nowPlay.results.forEach(nowPlaying => {
@@ -86,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster">
                     <div class="movie-article-div">
                         <h3>${movie.title}</h3>
-                        <p>${movie.vote_average}/10 IMDB</p>
+                        <p> <span class="fa-solid fa-star"></span> ${movie.vote_average}/10 IMDB</p>
                         <p class="genres"></p>
                     </div>
                

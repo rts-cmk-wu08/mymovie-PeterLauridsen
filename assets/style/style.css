@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -103,4 +105,33 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+footer{
+    position: sticky;
+    bottom: 0%;
+    background-color: white;
+    width: 100%;
+    height: 5rem;
+}
+
+.footerIcons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #AAA9B1;
+    height: 5rem;
+}
+
+.footerIcons__size{
+    font-size: x-large;
+}
+
+.footerIcons__size__90deg{
+    font-size: x-large;
+   rotate: 90deg;
+}
+
+.fa-star{
+    color: yellow;
 }
