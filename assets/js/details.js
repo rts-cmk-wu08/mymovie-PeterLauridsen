@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let baseUrl = "https://api.themoviedb.org/3"
     let apiKey = "f6cd4ea3a6cc09f282a877cc9c2daed4"
     let params = new URLSearchParams(window.location.search)
     let id = params.get("id")
@@ -23,14 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </figure>
             `
             section.append(div)
-            let heroCon = document.querySelector(".remove__heroCon")
+           
             let playDiv = document.createElement("div")
             playDiv.classList.add("play__div")
-            playDiv.innerHTML = `
-            <i class="fa-solid fa-circle-play"></i>
-            <p>Play trailer</p>
-            `
-        
 
             section.append(playDiv)
             function time_convert(num) {
@@ -91,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             detail.genres.forEach((genre) => {
                 let p = document.createElement("p")
-                p.classList.add("genre")
+                p.classList.add("genre__pill")
                 p.innerHTML = `
             ${genre.name}
             `
@@ -125,9 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
             `
                         actorsImg.append(cast)
 
-                    })
+            })
 
-                })
-                })
-                })
+        })
+    })
+})
             
