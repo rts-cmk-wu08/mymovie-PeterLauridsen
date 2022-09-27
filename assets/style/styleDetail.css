@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+.hero__img{
+    width: 23.4rem;
+    height: 18.7rem;
+}
+
+.movie__container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__genreContainer{
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.card__rating__container{
+    display: flex;
+    margin: 0.5rem;
+ }
+
+ .description__text{
+    
+ }
+
+ .detail__container{
+    margin: 0 auto;
+ }
+ 
+ .card__infoContainer{
+    display: flex;
+    gap: 0.8rem;
+ }
+
+ .card__infoColumn{
+    
+ }
+
+.cast__seeMoreContainer{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.all__cast__img__container{
+    display: flex;
+    width: 100%;
+    height: 5rem;
+}
+
+.cast__img{
+    display: flex;
+    height: 4.5rem;
+    width: 4.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+
+}
